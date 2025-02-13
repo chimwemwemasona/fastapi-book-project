@@ -17,10 +17,9 @@ jobs:
           username: ${{ secrets.DROPLET_USERNAME }}
           key: ${{ secrets.DROPLET_SSH_KEY }}
           script: |
-            cd /var/www/fastapi-app
+            cd /var/www/fastapi-app/fastapi-book-project
             git pull
             source venv/bin/activate
             pip install -r requirements.txt
             sudo systemctl restart fastapi
             sudo systemctl restart nginx 
-            
